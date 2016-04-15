@@ -1,7 +1,7 @@
 {
   "name": "safe-string",
   "version": "0.1.0",
-  "description": "A server-rendering helper module for styletron",
+  "description": "Escapes HTML characters and JavaScript line terminators",
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "homepage": "https://github.com/rtsao/safe-string",
   "repository": "git@github.com:rtsao/safe-string.git",

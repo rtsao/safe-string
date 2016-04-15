@@ -8,16 +8,18 @@ Escapes HTML characters and JavaScript line terminators
 
 Adapted from [`serialize-javascript`](https://github.com/yahoo/serialize-javascript).
 
+The use case of this module is to safely embed content into a `<script>` element within an HTML document.
+
 ## Usage
 
 ```js
-const safeString = require('safe-string');
+var safeString = require('safe-string');
 
-safeString('</script>');
-```
-Output:
-```js
-'\\u003C\\u002Fscript\\u003E'
+var escaped = safeString('</script>');
+
+var html = '<script>' + escaped + '</script>';
+console.log(html);
+// => '<script>\\u003C\\u002Fscript\\u003E</script>'
 ```
 
 ### See Also
