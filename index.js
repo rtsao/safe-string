@@ -19,10 +19,12 @@ var UNICODE_CHARS = {
   '\u2029': '\\u2029'
 };
 
+function replaceUnsafe(char) {
+  return UNICODE_CHARS[char];
+}
+
 function safeString(str) {
-  return str.replace(UNSAFE_CHARS_PATTERN, function(unsafeChar) {
-    return UNICODE_CHARS[unsafeChar];
-  });
+  return str.replace(UNSAFE_CHARS_PATTERN, replaceUnsafe);
 }
 
 module.exports = safeString;
