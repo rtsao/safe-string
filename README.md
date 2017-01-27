@@ -13,13 +13,16 @@ The use case of this module is to safely embed content into a `<script>` element
 ## Usage
 
 ```js
-var safeString = require('safe-string');
+const safeString = require('safe-string');
 
-var escaped = safeString('</script>');
+const string = JSON.stringify({foo: '</script>'});
+// => '{"foo":"</script>"}'
 
-var html = '<script>' + escaped + '</script>';
-console.log(html);
-// => '<script>\\u003C\\u002Fscript\\u003E</script>'
+const escaped = safeString(string);
+// => '{"foo":"\u003C\u002Fscript\u003E"}'
+
+const html = `<script type="application/json">${escaped}</script>`;
+// => '<script type="application/json">{"foo":"\u003C\u002Fscript\u003E"}</script>'
 ```
 
 ### See Also
