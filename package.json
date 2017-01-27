@@ -1,6 +1,6 @@
 {
   "name": "safe-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Escapes HTML characters and JavaScript line terminators",
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "homepage": "https://github.com/rtsao/safe-string",
