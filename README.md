@@ -23,6 +23,9 @@ const escaped = safeString(string);
 
 const html = `<script type="application/json">${escaped}</script>`;
 // => '<script type="application/json">{"foo":"\u003C\u002Fscript\u003E"}</script>'
+
+const parsed = JSON.parse(escaped);
+// => {foo: '</script>'}
 ```
 
 ### See Also
